@@ -65,6 +65,10 @@ function createMap(earthquakes) {
     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
   });
 
+  https://github.com/fraxen/tectonicplates/blob/master/GeoJSON/PB2002_boundaries.json
+  var tectonic = L.tileLayer('https://github.com/fraxen/tectonicplates/blob/master/GeoJSON/PB2002_boundaries.json', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  })
   // Create a baseMaps object.
   var baseMaps = {
     "Street Map": street,
@@ -73,7 +77,8 @@ function createMap(earthquakes) {
 
   // Create an overlay object to hold our overlay.
   var overlayMaps = {
-    Earthquakes: earthquakes
+    Earthquakes: earthquakes,
+    'Tectonic Plates': tectonic
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load.
