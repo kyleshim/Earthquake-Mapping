@@ -4,6 +4,7 @@ var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_mo
 d3.json(queryUrl).then(function (data) {
   // Once we get a response, send the data.features object to the createFeatures function.
   createFeatures(data.features);
+  console.log(data);
 });
 
 function createFeatures(earthquakeData) {
@@ -34,7 +35,7 @@ function createFeatures(earthquakeData) {
       return "#69B34C";
     }
   }; 
-  
+  console.log(earthquakeData);
   // Create a GeoJSON layer that contains the features array on the earthquakeData object.
   // Style circles for each earthquake.
   // Run the onEachFeature function once for each piece of data in the array.
